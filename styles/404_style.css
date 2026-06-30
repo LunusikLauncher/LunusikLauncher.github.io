@@ -1,0 +1,116 @@
+:root {
+    --bg-color: #0e081b;
+    --panel-bg: rgba(30, 18, 51, 0.45);
+    --panel-border: rgba(138, 43, 226, 0.2);
+    --accent-purple: #8a2be2;
+    --accent-green: #00ff7f;
+    --text-main: #ffffff;
+    --text-muted: #a59cb5;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+    overflow: hidden;
+}
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    overflow-x: hidden;
+    position: relative;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.bg-blur-1, .bg-blur-2 {
+    position: absolute;
+    width: 50vw;
+    height: 50vh;
+    background: radial-gradient(circle, rgba(138,43,226,0.3) 0%, rgba(0,0,0,0) 70%);
+    z-index: -1;
+    filter: blur(50px);
+}
+.bg-blur-1 { top: 35%; left: -10%; }
+.bg-blur-2 { top: 0%; right: -5%; }
+
+
+main {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#error-wrapper {
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+    transform: translateY(-100px); 
+}
+
+.error-code {
+    font-size: clamp(6rem, 18vw, 9rem);
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 0.85;
+    margin: 0 0 10px 0;
+    text-shadow: 0 0 30px var(--accent-purple, #8a2be2);
+    letter-spacing: -0.03em;
+}
+
+.error-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    margin-top: 50px;
+    background-color: var(--accent-green);
+    color: #052e16;
+
+    z-index: 10;
+}
+.error-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 255, 127, 0.4);
+}
+
+.footer {
+    width: 100%;
+    border-top: 1px solid var(--panel-border);
+    padding: 40px 0;
+    bottom: 0px;
+    position: absolute;
+    margin-top: 60px;
+}
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+}
+.copyright {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+.disclaimer {
+    font-size: 0.75rem;
+    color: rgba(165, 156, 181, 0.4);
+    letter-spacing: 0.5px;
+}

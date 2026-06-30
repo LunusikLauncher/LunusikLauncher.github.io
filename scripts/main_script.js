@@ -42,4 +42,12 @@ document.addEventListener("DOMContentLoaded", () => {
             closeDrawer();
         }
     });
+
+    const downloadButtons = document.querySelectorAll('.btn-download');
+    downloadButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault(); 
+            window.location.href = `/thunk_for_install?download=${encodeURIComponent(button.getAttribute('href'))}`;
+        });
+    });
 });

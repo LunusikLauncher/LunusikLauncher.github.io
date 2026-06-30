@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Page not Found</title>
+
+    <link rel="shortcut icon" href="https://lunusiklauncher.github.io/images/logo.png" type="image/ico">
+    <link rel="icon" href="https://lunusiklauncher.github.io/images/logo.png" sizes="96x96" type="image/ico">
+
+
+    <script>
+        function showError() {
+            document.addEventListener("DOMContentLoaded", () => {
+                let errorWrapper = document.getElementById("error-wrapper");
+                if (errorWrapper) errorWrapper.style.display = "flex";
+            });
+            let errorWrapper = document.getElementById("error-wrapper");
+            if (errorWrapper) errorWrapper.style.display = "flex";
+        }
+
+        function loadPage(pageUrl) {
+            fetch(pageUrl)
+                .then(response => {
+                    if (!response.ok) throw new Error('File not Found');
+                    return response.text();
+                })
+                .then(html => {
+                    if(html.includes('id="error-wrapper"')) throw new Error('File not Found');
+                    document.open();
+                    document.write(html);
+                    document.close();
+                })
+                .catch(() => {
+                    showError();
+                });
+        }
+        var path = window.location.pathname;
+        console.log(path)
+       if(path && path !== "/"){
+            var url = path.split("/")[1].toLowerCase();
+            console.log(url)
+            loadPage(`pages/${url}.html`);
+       }else{
+            loadPage(`pages/main.html`);
+       }
+    </script>
+    <link rel="stylesheet" href="styles/404_style.css">
+    
+</head>
+<body>
+    <div class="bg-blur-1"></div>
+    <div class="bg-blur-2"></div>
+
+    <main>
+        <div id="error-wrapper">
+            <div class="error-code">404</div>
+            <div class="error-code">-</div>
+            <div class="error-code">Page not Found</div>
+
+            <a href="/" class="error-btn">Go to main page</a>
+        </div>
+        <footer class="footer">
+            <div class="footer-container">
+                <p class="copyright">&copy; 2026 Lunusik Launcher. All rights reserved.</p>
+                <p class="disclaimer">NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.</p>
+                <p class="disclaimer">This is a non-commercial, open-source fan project. All game assets are downloaded directly from official Mojang servers.</p>
+            </div>
+        </footer>
+    </main>
+</body>
+</html>

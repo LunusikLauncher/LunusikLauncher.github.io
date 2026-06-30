@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Thank You for Installing!</title>
+    
+    <link rel="shortcut icon" href="https://lunusiklauncher.github.io/images/logo.png" type="image/ico">
+    <link rel="icon" href="https://lunusiklauncher.github.io/images/logo.png" sizes="96x96" type="image/ico">
+    
+
+    <link rel="stylesheet" href="styles/thunk_for_install_style.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const downloadUrl = urlParams.get('download');
+
+            if (downloadUrl) {
+                const hiddenLink = document.createElement('a');
+                hiddenLink.href = decodeURIComponent(downloadUrl);
+                hiddenLink.setAttribute('download', '');
+                document.body.appendChild(hiddenLink);
+                hiddenLink.click();
+                document.body.removeChild(hiddenLink);
+            }
+        });
+    </script>
+
+</head>
+<body>
+    <div class="bg-blur-1"></div>
+    <div class="bg-blur-2"></div>
+    <main>
+        <div class="success-wrapper">
+            <div class="success-icon-box">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+            </div>
+
+            <h1 class="success-title">Thank You for Installing!</h1>
+            <p class="success-subtitle">
+                Lunusik Launcher has been successfully downloaded. We are actively working on updates for it.
+            </p>
+
+            <a href="https://github.com/LunusikLauncher/LunusikLauncher" target="_blank" class="btn-github-star">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/>
+                </svg>
+                Leave a Star on GitHub
+            </a>
+
+            <a href="/" class="back-link">← Back to home page</a>
+
+        </div>
+        <footer class="footer">
+            <div class="footer-container">
+                <p class="copyright">&copy; 2026 Lunusik Launcher. All rights reserved.</p>
+                <p class="disclaimer">NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.</p>
+                <p class="disclaimer">This is a non-commercial, open-source fan project. All game assets are downloaded directly from official Mojang servers.</p>
+            </div>
+        </footer>
+    </main>
+</body>
+</html>
