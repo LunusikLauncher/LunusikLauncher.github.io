@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     downloadButtons.forEach(button => {
         button.addEventListener('click', (e) => {
             e.preventDefault(); 
-            window.location.href = `/thunk_for_install?download=${encodeURIComponent(button.getAttribute('href'))}`;
+            window.location.href = `/thank_for_install?download=${encodeURIComponent(button.getAttribute('href'))}`;
         });
     });
 });
