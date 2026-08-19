@@ -22,7 +22,7 @@
 
         function loadPage(pageUrl) {
             const freshUrl = `${pageUrl}?v=0.4.0`;
-            fetch(pageUrl )
+            fetch(freshUrl )
                 .then(response => {
                     if (!response.ok) throw new Error('File not Found');
                     return response.text();
