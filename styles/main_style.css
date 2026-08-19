@@ -132,17 +132,7 @@ body {
     border-color: var(--accent-purple);
 }
 
-.btn-download {
-    background: var(--accent-purple);
-    color: var(--text-main);
-    width: 100%;
-    text-align: center;
-}
 
-.btn-download:hover {
-    background: #9d4edd;
-    box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
-}
 
 .full-width { width: 100%; }
 
