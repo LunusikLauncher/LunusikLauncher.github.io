@@ -567,7 +567,7 @@ body {
     margin: 10px 0;
 }
 
-.drawer-qt-info, .drawer-github, .drawer-mingw-info {
+.drawer-qt-info, .drawer-github, .drawer-mingw-info, .drawer-lzma-info, .drawer-font-info {
     color: var(--text-muted);
 }
 
